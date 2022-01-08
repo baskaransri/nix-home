@@ -11,8 +11,8 @@ let
 ){overlays =  [
     (import (builtins.fetchTarball {
       url =
-        #"https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-	"https://github.com/nix-community/emacs-overlay/archive/b539c9174b79abaa2c24bd773c855b170cfa6951.tar.gz";
+        "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+	#"https://github.com/nix-community/emacs-overlay/archive/b539c9174b79abaa2c24bd773c855b170cfa6951.tar.gz";
     }))
     (self: super: {nix-direnv = pkgsUnstable.nix-direnv;})
   ];};
@@ -34,15 +34,15 @@ in
   nixpkgs.overlays = [
     (import (builtins.fetchTarball {
       url =
-        #"https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-	"https://github.com/nix-community/emacs-overlay/archive/b539c9174b79abaa2c24bd773c855b170cfa6951.tar.gz";
+        "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
+	#"https://github.com/nix-community/emacs-overlay/archive/b539c9174b79abaa2c24bd773c855b170cfa6951.tar.gz";
     }))
     (self: super: {nix-direnv = pkgsUnstable.nix-direnv;})
   ];
 
   fonts.fontconfig.enable = true;
 
-  home.packages = with mypkgs; [
+  home.packages = with pkgs; [
     ##General config
     #Terminal Manager
     kitty
@@ -93,7 +93,7 @@ in
 
   programs.emacs = {
     enable = true;
-    package = mypkgs.emacsGcc;
+    package = pkgs.emacsGcc;
     extraPackages = (epkgs: [ epkgs.vterm ]);
   };
 
