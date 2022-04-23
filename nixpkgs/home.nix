@@ -26,7 +26,7 @@ in {
   # paths it should manage.
   home.username = "baskaran";
   home.homeDirectory = "/Users/baskaran";
-  home.sessionVariables = { EDITOR = "vim"; };
+  home.sessionVariables.EDITOR = "vim";
 
   #for gccemacs
   #2021.07.20 - home-manager + emacsGcc is broken on master. See https://github.com/nix-community/emacs-overlay/issues/162
