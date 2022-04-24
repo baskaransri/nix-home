@@ -8,11 +8,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
+    emacsOverlay.url = "github:nix-community/emacs-overlay";
 
   };
 
-  outputs = { self, nixpkgs, homeManager, emacs-overlay }: {
+  outputs = { self, nixpkgs, homeManager, emacsOverlay }: {
     homeConfigurations = {
       "baskaran" = homeManager.lib.homeManagerConfiguration {
         configuration = { lib, config, pkgs, ... }: {
@@ -64,10 +64,10 @@
 
             #emacs fonts
             fontconfig
-            emacs-all-the-icons-fonts
-            #(nerdfonts.override { fonts = [ "Inconsolata" "FiraCode" ]; })
+            # emacs-all-the-icons-fonts causes the flake to try and create my home directory.
+            # emacs-all-the-icons-fonts
+            # #(nerdfonts.override { fonts = [ "Inconsolata" "FiraCode" ]; })
 
-            #oh-my-zsh
             zsh-autosuggestions
           ];
           fonts.fontconfig.enable = true;
@@ -178,8 +178,8 @@
             };
           };
 
-          # add installs to spotlight search
-          # copied from https://github.com/nix-community/home-manager/issues/1341
+          # # add installs to spotlight search
+          # # copied from https://github.com/nix-community/home-manager/issues/1341
           home.activation = lib.mkIf (pkgs.stdenv.hostPlatform.isDarwin) {
             copyApplications = let
               apps = pkgs.buildEnv {
@@ -205,10 +205,10 @@
 
         pkgs = import nixpkgs {
           system = "x86_64-darwin";
-          overlays = [ emacs-overlay.overlay ];
+          overlays = [ emacsOverlay.overlay ];
         };
         system = "x86_64-darwin";
-        homeDirectory = "/home/baskaran/";
+        homeDirectory = "/home/baskaran";
         username = "baskaran";
         stateVersion = "21.11";
       };
