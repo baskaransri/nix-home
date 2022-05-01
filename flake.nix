@@ -1,9 +1,14 @@
 {
   #home-manager build --flake './#baskaran'
+  ## TODO:
+  # manage ~/.ipython/profile_default/ipython_config.py
+  # switch to flake
+  # install/manage tabnine
   description = "Baskaran's Home manager";
 
   inputs = {
     nixpkgs.url = "flake:nixpkgs";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     homeManager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -12,7 +17,7 @@
 
   };
 
-  outputs = { self, nixpkgs, homeManager, emacsOverlay }: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, homeManager, emacsOverlay }: {
     homeConfigurations = {
       "baskaran" = homeManager.lib.homeManagerConfiguration {
         configuration = { lib, config, pkgs, ... }: {
@@ -24,12 +29,12 @@
             kitty
             tmux
 
-            #Print to Remarkable stuff
+            # #Print to Remarkable stuff
             qpdf
             ghostscript
             rmapi
 
-            ####Dev stuff:
+            # ####Dev stuff:
             niv
             direnv
             lorri
@@ -37,13 +42,13 @@
             nixfmt
             nix-prefetch-git
 
-            ###DOOM packages
-            ##Org packages
+            # ###DOOM packages
+            # ##Org packages
             sqlite # for org-roam
             graphviz
             #pngpaste
 
-            ##Python packages
+            # ##Python packages
             black # for doom python autoformat
             nodePackages.pyright # for doom python-lsp
             ###Python Emacs Debugger packages
@@ -90,7 +95,7 @@
               enable = true;
               plugins = [
                 "git"
-                #"zsh-autosuggestions"
+                # "zsh-autosuggestions"
                 #"zsh-history-substring-search"
                 #"zsh-syntax-highlighting"
               ];
@@ -208,7 +213,7 @@
           overlays = [ emacsOverlay.overlay ];
         };
         system = "x86_64-darwin";
-        homeDirectory = "/home/baskaran";
+        homeDirectory = "/Users/baskaran";
         username = "baskaran";
         stateVersion = "21.11";
       };

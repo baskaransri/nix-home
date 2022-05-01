@@ -1,8 +1,17 @@
 { config, lib, pkgs, ... }:
 
+## TODO:
+# manage ~/.ipython/profile_default/ipython_config.py 
+# switch to flake
+# install/manage tabnine
+
 let
 
   pkgsUnstable = import <nixpkgs-unstable> { };
+  oldpkgs = import (builtins.fetchTarball {
+        url = "https://github.com/NixOS/nixpkgs/archive/137f19d1d48b6d7c7901bb86729a2bce3588d4e9.tar.gz";
+    }) {};
+
   mypkgs = import (builtins.fetchTarball {
     url =
       "https://github.com/NixOS/nixpkgs/archive/a7ecde854aee5c4c7cd6177f54a99d2c1ff28a31.tar.gz";
@@ -36,7 +45,10 @@ in {
     (import (builtins.fetchTarball {
       url =
         "https://github.com/nix-community/emacs-overlay/archive/master.tar.gz";
-      #"https://github.com/nix-community/emacs-overlay/archive/b539c9174b79abaa2c24bd773c855b170cfa6951.tar.gz";
+        #"https://github.com/nix-community/emacs-overlay/archive/b539c9174b79abaa2c24bd773c855b170cfa6951.tar.gz";
+	#trying to bring back march 2022 didn't help
+        #"https://github.com/nix-community/emacs-overlay/archive/fdafbede17265f56e3df5382442a8c41069e0994.tar.gz";
+
     }))
     (self: super: { nix-direnv = pkgsUnstable.nix-direnv; })
   ];
@@ -70,7 +82,7 @@ in {
 
     ##Python packages
     black # for doom python autoformat
-    nodePackages.pyright # for doom python-lsp
+    pkgsUnstable.nodePackages.pyright # for doom python-lsp
     ###Python Emacs Debugger packages
     nodejs
     python39Packages.debugpy
