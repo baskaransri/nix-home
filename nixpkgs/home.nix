@@ -135,6 +135,9 @@ in {
         #"zsh-history-substring-search"
         #"zsh-syntax-highlighting"
       ];
+      shellAliases = {
+	home-manager-flake = "home-manager --flake '/Users/baskaran/.config/#baskaran'";
+	};
       #theme = "robbyrussell";
     };
   };

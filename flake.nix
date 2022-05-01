@@ -73,7 +73,7 @@
             # emacs-all-the-icons-fonts
             # #(nerdfonts.override { fonts = [ "Inconsolata" "FiraCode" ]; })
 
-            zsh-autosuggestions
+            # zsh-autosuggestions
           ];
           fonts.fontconfig.enable = true;
           programs.emacs = {
@@ -91,6 +91,10 @@
           programs.zsh = {
             enable = true;
             enableSyntaxHighlighting = true;
+            shellAliases = {
+              home-manager-flake =
+                "home-manager --flake '/Users/baskaran/.config/#baskaran'";
+            };
             oh-my-zsh = {
               enable = true;
               plugins = [
