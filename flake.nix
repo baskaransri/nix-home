@@ -3,6 +3,7 @@
   ## TODO:
   # manage ~/.ipython/profile_default/ipython_config.py
   # switch to flake
+  # figure out how to mix in unstable in flake
   # install/manage tabnine
   description = "Baskaran's Home manager";
 
@@ -42,20 +43,22 @@
             nixfmt
             nix-prefetch-git
 
-            # ###DOOM packages
-            # ##Org packages
+            ###DOOM packages
+            ##Org packages
             sqlite # for org-roam
             graphviz
             #pngpaste
 
-            # ##Python packages
+            ##Python packages
             black # for doom python autoformat
             nodePackages.pyright # for doom python-lsp
-            ###Python Emacs Debugger packages
+            # Python Emacs Debugger packages
             nodejs
             python39Packages.debugpy
 
-            ##Julia packages
+            ##Latex packages
+            #LSP:
+            texlab
 
             ##General Doom Packages
             ripgrep

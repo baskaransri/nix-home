@@ -127,6 +127,9 @@ in {
   programs.zsh = {
     enable = true;
     enableSyntaxHighlighting = true;
+      shellAliases = {
+	home-manager-flake = "home-manager --flake '/Users/baskaran/.config/#baskaran'";
+	};
     oh-my-zsh = {
       enable = true;
       plugins = [
@@ -135,9 +138,6 @@ in {
         #"zsh-history-substring-search"
         #"zsh-syntax-highlighting"
       ];
-      shellAliases = {
-	home-manager-flake = "home-manager --flake '/Users/baskaran/.config/#baskaran'";
-	};
       #theme = "robbyrussell";
     };
   };
