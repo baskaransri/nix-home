@@ -32,7 +32,7 @@
 
             # #Print to Remarkable stuff
             qpdf
-            ghostscript
+            #ghostscript # clashes with texlive, move texlive to local direnv
             rmapi
 
             # ####Dev stuff:
@@ -59,6 +59,7 @@
             ##Latex packages
             #LSP:
             texlab
+            texlive.combined.scheme-medium
 
             ##General Doom Packages
             ripgrep
