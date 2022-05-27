@@ -57,7 +57,7 @@
             python39Packages.debugpy
 
             ##Latex packages
-            #LSP:
+            #LSP: - should be in a local flake managing dev env, not here
             texlab
             texlive.combined.scheme-medium
 
