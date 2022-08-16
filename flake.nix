@@ -14,11 +14,11 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    emacsOverlay.url = "github:nix-community/emacs-overlay";
+    # emacsOverlay.url = "github:nix-community/emacs-overlay";
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, homeManager, emacsOverlay }: {
+  outputs = { self, nixpkgs, nixpkgs-unstable, homeManager }: {
     homeConfigurations = {
       "baskaran" = homeManager.lib.homeManagerConfiguration {
         configuration = { lib, config, pkgs, ... }: {
@@ -82,7 +82,7 @@
           fonts.fontconfig.enable = true;
           programs.emacs = {
             enable = true;
-            package = pkgs.emacsNativeComp;
+            package = pkgs.emacs28NativeComp;
             extraPackages = (epkgs: [ epkgs.vterm ]);
           };
 
@@ -218,7 +218,7 @@
 
         pkgs = import nixpkgs {
           system = "x86_64-darwin";
-          overlays = [ emacsOverlay.overlay ];
+          # overlays = [ emacsOverlay.overlay ];
         };
         system = "x86_64-darwin";
         homeDirectory = "/Users/baskaran";
