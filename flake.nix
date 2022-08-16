@@ -33,7 +33,7 @@
             # #Print to Remarkable stuff
             qpdf
             #ghostscript # clashes with texlive, move texlive to local direnv
-            rmapi
+            #rmapi
 
             # ####Dev stuff:
             niv
