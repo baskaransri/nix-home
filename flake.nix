@@ -100,7 +100,11 @@
                 "home-manager --flake '/Users/baskaran/.config/#baskaran'";
             };
             oh-my-zsh = {
-              enable = true;
+              # opens up too many file descriptors in emacs, figure out how to
+              # make sure that doesn't happen.
+              # you can check file descriptors by opening activity monitor, double clicking emacs and
+              # looking at open files.
+              enable = false;
               plugins = [
                 "git"
                 # "zsh-autosuggestions"
