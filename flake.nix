@@ -5,6 +5,7 @@
   # switch to flake
   # figure out how to mix in unstable in flake
   # install/manage tabnine
+  # remove oh-my-zsh from files watched by emacs (see note under 'oh-my-zsh')
   description = "Baskaran's Home manager";
 
   inputs = {
@@ -47,6 +48,7 @@
             ##Org packages
             sqlite # for org-roam
             graphviz
+            taskjuggler # for gannt charts
             #pngpaste
 
             ##Python packages
@@ -104,6 +106,10 @@
               # make sure that doesn't happen.
               # you can check file descriptors by opening activity monitor, double clicking emacs and
               # looking at open files.
+              # 2022-09-01: files are in /nix/store/4y1wgj9rd9fcv5hpdpdqz9asr3avgkjq-oh-my-zsh-2021-12-18/share/oh-my-zsh/plugins
+              # on futher look this is only when I direnv in ~/programming/python/pytorch-geometric/cora/simplecs.py
+              # removing likely packages doesn't do anything
+              # have just deleted all the plugins from there.
               enable = false;
               plugins = [
                 "git"
