@@ -101,6 +101,8 @@
               home-manager-flake =
                 "home-manager --flake '/Users/baskaran/.config/#baskaran'";
             };
+            initExtra =
+              "export PATH=$PATH:/opt/intel/oneapi/compiler/latest/mac/bin/intel64/";
             oh-my-zsh = {
               # opens up too many file descriptors in emacs, figure out how to
               # make sure that doesn't happen.
