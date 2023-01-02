@@ -88,6 +88,10 @@
             extraPackages = (epkgs: [ epkgs.vterm ]);
           };
 
+          # 2023.01.02: build error in home-manager, removing manpages fixes this
+          # See: https://github.com/nix-community/home-manager/issues/3342
+          manual.manpages.enable = false;
+
           #direnv stuff:
           programs.direnv = {
             enable = true;
