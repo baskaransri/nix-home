@@ -89,7 +89,7 @@
                 nodePackages.pyright # for doom python-lsp
                 # Python Emacs Debugger packages
                 nodejs
-                python39Packages.debugpy
+                python310Packages.debugpy
 
                 ##Latex packages
                 #LSP: - should be in a local flake managing dev env, not here
