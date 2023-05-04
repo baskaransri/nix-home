@@ -27,14 +27,14 @@
     let
       system = "x86_64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
-      texpkgs = (nixpkgs-unstable.texlive.combine {
-        inherit (nixpkgs-unstable.texlive)
-          scheme-full ieeetran caption dvisvgm
-          dvipng # for preview and export as html
-          wrapfig amsmath ulem hyperref capt-of;
-        #(setq org-latex-compiler "lualatex")
-        #(setq org-preview-latex-default-process 'dvisvgm)
-      });
+      # texpkgs = (nixpkgs-unstable.texlive.combine {
+      #   inherit (nixpkgs-unstable.texlive)
+      #     scheme-full ieeetran caption dvisvgm
+      #     dvipng # for preview and export as html
+      #     wrapfig amsmath ulem hyperref capt-of;
+      #   #(setq org-latex-compiler "lualatex")
+      #   #(setq org-preview-latex-default-process 'dvisvgm)
+      # });
     in {
       homeConfigurations.baskaran = homeManager.lib.homeManagerConfiguration {
         inherit pkgs;
@@ -94,7 +94,7 @@
                 ##Latex packages
                 #LSP: - should be in a local flake managing dev env, not here
                 texlab
-                texpkgs
+                # texpkgs
 
                 ##General Doom Packages
                 ripgrep
@@ -119,7 +119,7 @@
               home-manager.enable = true;
               emacs = {
                 enable = true;
-                package = pkgs.emacs28NativeComp;
+                package = pkgs.emacsMacport;
                 extraPackages = (epkgs: [ epkgs.vterm ]);
               };
               direnv = {
