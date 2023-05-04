@@ -7,16 +7,36 @@
         ]
       },
       "locked": {
-        "lastModified": 1653518057,
-        "narHash": "sha256-cam3Nfae5ADeEs6mRPzr0jXB7+DhyMIXz0/0Q13r/yk=",
+        "lastModified": 1683221986,
+        "narHash": "sha256-n688GK4wO2pZpI4gHOxj/PF85bzUMPEJ8B3Wd3cHSjk=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "64831f938bd413cefde0b0cf871febc494afaa4f",
+        "rev": "f3824311a16cbe70dbaeedc17a97dfcd11901c3f",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "mkalias": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1678761502,
+        "narHash": "sha256-tL3C/b2BPOGQpV287wECDCDWmKwwPvezAAN3qz7N07M=",
+        "owner": "reckenrode",
+        "repo": "mkalias",
+        "rev": "8a5478cdb646f137ebc53cb9d235f8e5892ea00a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "reckenrode",
+        "repo": "mkalias",
         "type": "github"
       }
     },
@@ -53,6 +73,7 @@
     "root": {
       "inputs": {
         "homeManager": "homeManager",
+        "mkalias": "mkalias",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable"
       }
