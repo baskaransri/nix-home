@@ -1,5 +1,5 @@
 { config, inputs, lib, pkgs, system, ... }:
-let inherit (inputs) mkAlias;
+let inherit (inputs) mkalias;
 in {
   disabledModules = [ "targets/darwin/linkapps.nix" ];
   home.activation.aliasApplications = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin
