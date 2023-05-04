@@ -119,7 +119,7 @@
               home-manager.enable = true;
               emacs = {
                 enable = true;
-                package = pkgs.emacsMacport;
+                package = pkgs.emacs28NativeComp;
                 extraPackages = (epkgs: [ epkgs.vterm ]);
               };
               direnv = {
