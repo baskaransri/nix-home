@@ -15,7 +15,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    mkalias = {
+    mkAlias = {
       url = "github:reckenrode/mkalias";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -42,6 +42,9 @@
         #   system = "x86_64-darwin";
         #   # overlays = [ emacsOverlay.overlay ];
         # };
+        # Make inputs and system available to all modules.
+        extraSpecialArgs = { inherit inputs system; };
+
         modules = [
           ({ pkgs, ... }: rec {
             _module.args.nixpkgs-unstable =
