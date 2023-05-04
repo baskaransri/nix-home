@@ -176,65 +176,65 @@
                     style = "bold purple";
                     format = "\\[[$symbol]($style)\\]";
                   };
-                } // pkgs.lib.mapAttrs (_: value: { format = value; }) {
-                  aws =
-                    "\\[[$symbol($profile)(\\($region\\))(\\[$duration\\])]($style)\\]";
-                  cmake = "\\[[$symbol($version)]($style)\\]";
-                  cmd_duration = "\\[[⏱ $duration]($style)\\]";
-                  cobol = "\\[[$symbol($version)]($style)\\]";
-                  conda = "\\[[$symbol$environment]($style)\\]";
-                  crystal = "\\[[$symbol($version)]($style)\\]";
-                  dart = "\\[[$symbol($version)]($style)\\]";
-                  deno = "\\[[$symbol($version)]($style)\\]";
-                  docker_context = "\\[[$symbol$context]($style)\\]";
-                  dotnet = "\\[[$symbol($version)(🎯 $tfm)]($style)\\]";
-                  elixir =
-                    "\\[[$symbol($version \\(OTP $otp_version\\))]($style)\\]";
-                  elm = "\\[[$symbol($version)]($style)\\]";
-                  erlang = "\\[[$symbol($version)]($style)\\]";
-                  gcloud =
-                    "\\[[$symbol$account(@$domain)(\\($region\\))]($style)\\]";
-                  git_branch = "\\[[$symbol$branch]($style)\\]";
-                  git_status = "([\\[$all_status$ahead_behind\\]]($style))";
-                  golang = "\\[[$symbol($version)]($style)\\]";
-                  helm = "\\[[$symbol($version)]($style)\\]";
-                  hg_branch = "\\[[$symbol$branch]($style)\\]";
-                  java = "\\[[$symbol($version)]($style)\\]";
-                  julia = "\\[[$symbol($version)]($style)\\]";
-                  kotlin = "\\[[$symbol($version)]($style)\\]";
-                  kubernetes =
-                    "\\[[$symbol$context( \\($namespace\\))]($style)\\]";
-                  lua = "\\[[$symbol($version)]($style)\\]";
-                  memory_usage = "\\[$symbol[$ram( | $swap)]($style)\\]";
-                  nim = "\\[[$symbol($version)]($style)\\]";
-                  #nix_shell.format = "\\[[$symbol$state( \\($name\\))]($style)\\]";
-                  nix_shell = "\\[[$symbol\\($name\\)]($style)\\]";
-                  nodejs = "\\[[$symbol($version)]($style)\\]";
-                  ocaml =
-                    "\\[[$symbol($version)(\\($switch_indicator$switch_name\\))]($style)\\]";
-                  openstack = "\\[[$symbol$cloud(\\($project\\))]($style)\\]";
-                  package = "\\[[$symbol$version]($style)\\]";
-                  perl = "\\[[$symbol($version)]($style)\\]";
-                  php = "\\[[$symbol($version)]($style)\\]";
-                  pulumi = "\\[[$symbol$stack]($style)\\]";
-                  purescript = "\\[[$symbol($version)]($style)\\]";
-                  python =
-                    "\\[[\${symbol}\${pyenv_prefix}(\${version})(\\($virtualenv\\))]($style)\\]";
-                  red = "\\[[$symbol($version)]($style)\\]";
-                  ruby = "\\[[$symbol($version)]($style)\\]";
-                  rust = "\\[[$symbol($version)]($style)\\]";
-                  scala = "\\[[$symbol($version)]($style)\\]";
-                  sudo = "\\[[as $symbol]\\]";
-                  swift = "\\[[$symbol($version)]($style)\\]";
-                  terraform = "\\[[$symbol$workspace]($style)\\]";
-                  time = "\\[[$time]($style)\\]";
-                  username = "\\[[$user]($style)\\]";
-                  vagrant = "\\[[$symbol($version)]($style)\\]";
-                  vlang = "\\[[$symbol($version)]($style)\\]";
-                  zig = "\\[[$symbol($version)]($style)\\]";
+                } // pkgs.lib.mapAttrs
+                  (_: value: { format = value + "($style)\\]"; }) {
+                    aws =
+                      "\\[[$symbol($profile)(\\($region\\))(\\[$duration\\])]";
+                    cmake = "\\[[$symbol($version)]";
+                    cmd_duration = "\\[[⏱ $duration]";
+                    cobol = "\\[[$symbol($version)]";
+                    conda = "\\[[$symbol$environment]";
+                    crystal = "\\[[$symbol($version)]";
+                    dart = "\\[[$symbol($version)]";
+                    deno = "\\[[$symbol($version)]";
+                    docker_context = "\\[[$symbol$context]";
+                    dotnet = "\\[[$symbol($version)(🎯 $tfm)]";
+                    elixir = "\\[[$symbol($version \\(OTP $otp_version\\))]";
+                    elm = "\\[[$symbol($version)]";
+                    erlang = "\\[[$symbol($version)]";
+                    gcloud = "\\[[$symbol$account(@$domain)(\\($region\\))]";
+                    git_branch = "\\[[$symbol$branch]";
+                    golang = "\\[[$symbol($version)]";
+                    helm = "\\[[$symbol($version)]";
+                    hg_branch = "\\[[$symbol$branch]";
+                    java = "\\[[$symbol($version)]";
+                    julia = "\\[[$symbol($version)]";
+                    kotlin = "\\[[$symbol($version)]";
+                    kubernetes = "\\[[$symbol$context( \\($namespace\\))]";
+                    lua = "\\[[$symbol($version)]";
+                    memory_usage = "\\[$symbol[$ram( | $swap)]";
+                    nim = "\\[[$symbol($version)]";
+                    #nix_shell.format = "\\[[$symbol$state( \\($name\\))]($style)\\]";
+                    nix_shell = "\\[[$symbol\\($name\\)]";
+                    nodejs = "\\[[$symbol($version)]";
+                    ocaml =
+                      "\\[[$symbol($version)(\\($switch_indicator$switch_name\\))]";
+                    openstack = "\\[[$symbol$cloud(\\($project\\))]";
+                    package = "\\[[$symbol$version]";
+                    perl = "\\[[$symbol($version)]";
+                    php = "\\[[$symbol($version)]";
+                    pulumi = "\\[[$symbol$stack]";
+                    purescript = "\\[[$symbol($version)]";
+                    python =
+                      "\\[[\${symbol}\${pyenv_prefix}(\${version})(\\($virtualenv\\))]";
+                    red = "\\[[$symbol($version)]";
+                    ruby = "\\[[$symbol($version)]";
+                    rust = "\\[[$symbol($version)]";
+                    scala = "\\[[$symbol($version)]";
+                    swift = "\\[[$symbol($version)]";
+                    terraform = "\\[[$symbol$workspace]";
+                    time = "\\[[$time]";
+                    username = "\\[[$user]";
+                    vagrant = "\\[[$symbol($version)]";
+                    vlang = "\\[[$symbol($version)]";
+                    zig = "\\[[$symbol($version)]";
 
-                  # This is the "bracketed segments" preset.
-                };
+                    # This is the "bracketed segments" preset.
+                  } // {
+                    git_status.format =
+                      "([\\[$all_status$ahead_behind\\]]($style))";
+                    sudo.format = "\\[[as $symbol]\\]";
+                  };
               };
 
             };
