@@ -38,6 +38,7 @@
     in {
       homeConfigurations.baskaran = homeManager.lib.homeManagerConfiguration {
         inherit pkgs;
+        inherit texpkgs;
         # pkgs = import nixpkgs {
         #   system = "x86_64-darwin";
         #   # overlays = [ emacsOverlay.overlay ];
@@ -55,7 +56,7 @@
               stateVersion = "21.11";
               sessionVariables.EDITOR = "vim";
 
-              home.packages = with pkgs; [
+              packages = with pkgs; [
                 ##General config
                 #Terminal Manager
                 kitty
