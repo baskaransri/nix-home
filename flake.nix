@@ -23,7 +23,7 @@
 
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, homeManager, mkalias }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, homeManager, mkalias }@inputs:
     let
       system = "x86_64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
