@@ -43,6 +43,7 @@
         #   # overlays = [ emacsOverlay.overlay ];
         # };
         # Make inputs and system available to all modules.
+        # Entirely so darwin.nix has access to mkalias
         extraSpecialArgs = { inherit inputs system; };
 
         modules = [
@@ -133,6 +134,7 @@
                 shellAliases = {
                   home-manager-flake =
                     "home-manager --flake '/Users/baskaran/.config/#baskaran'";
+		  sqlite = "sqlite3";
                 };
                 initExtra =
                   "export PATH=$PATH:/opt/intel/oneapi/compiler/latest/mac/bin/intel64/";
