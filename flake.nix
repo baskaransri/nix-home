@@ -87,7 +87,7 @@
 
                 ##Python packages
                 black # for doom python autoformat
-                nodePackages.pyright # for doom python-lsp
+                pyright # for doom python-lsp
                 # Python Emacs Debugger packages
                 nodejs
                 python310Packages.debugpy
@@ -130,7 +130,7 @@
 
               zsh = {
                 enable = true;
-                enableSyntaxHighlighting = true;
+                syntaxHighlighting.enable = true;
                 shellAliases = {
                   home-manager-flake =
                     "home-manager --flake '/Users/baskaran/.config/#baskaran'";
