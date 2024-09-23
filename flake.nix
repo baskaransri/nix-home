@@ -56,7 +56,7 @@
             home = {
               username = "baskaran";
               homeDirectory = "/Users/baskaran";
-              stateVersion = "21.11";
+              stateVersion = "24.05";
               sessionVariables.EDITOR = "vim";
 
               packages = with pkgs; [
