@@ -75,7 +75,7 @@
                 direnv
                 lorri
 
-                nixfmt
+                nixfmt-classic
                 nix-prefetch-git
 
                 ###DOOM packages
